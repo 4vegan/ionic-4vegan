@@ -1,0 +1,29 @@
+page-tabs {
+    .tabs-md .tabbar  {
+       
+    }
+    // .tab-button-text {
+    //     color: black;
+    // }
+    // .tabs-md  .tab-button[aria-selected=true] .tab-button-icon {
+    //     color: #329932;
+    // }
+    // .tabs-md[tabsLayout=icon-top] .has-icon .tab-button-text {
+    //     margin-top: 4px;
+    //     margin-bottom: 0;
+    //     color: #329932;
+    // }
+    .tabs-ios .tab-button[aria-selected=true] .tab-button-icon {
+        color: #329932;
+    }
+    .tabs-ios .tab-button[aria-selected=true] {
+        color: #329932;
+    }
+
+    .tabs-md .tab-button[aria-selected=true] .tab-button-icon {
+        color: #329932;
+    }
+    .tabs-md .tab-button[aria-selected=true] {
+        color: #329932;
+    }
+}
