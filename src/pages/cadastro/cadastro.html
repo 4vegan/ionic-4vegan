@@ -28,10 +28,6 @@
       <ion-input type="text"></ion-input>
     </ion-item>
 
-    <ion-item>
-        <ion-label floating>Email:</ion-label>
-        <ion-input type="text"></ion-input>
-    </ion-item>
 
     <ion-item>
         <ion-label floating>Telefone:</ion-label>
@@ -39,15 +35,91 @@
     </ion-item>
 
     <ion-item>
-      <ion-label floating>Celular:</ion-label>
+      <ion-label floating>Tipo do estabelecimento:</ion-label>
+      <ion-label floating style="font-size: 12px;">Ex: Restaurante, Boutique...</ion-label>
       <ion-input type="text"></ion-input>
-  </ion-item>
+    
+    </ion-item>
+    
+    
+    <ion-list radio-group>
+        <ion-list-header>
+            Seu estabelecimento é:
+        </ion-list-header>
+      
+        <ion-item>
+          <ion-label>Vegano</ion-label>
+          <ion-radio checked="true" value="vegano" color="secondary"></ion-radio>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label>Vegetariano</ion-label>
+          <ion-radio value="vegetariano" color="secondary"></ion-radio>
+        </ion-item>
+      </ion-list>
+
+      <ion-item >
+           <ion-label floating>CEP:</ion-label>
+           <ion-input type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>Endereço:</ion-label>
+          <ion-input type="text"></ion-input>
+      </ion-item>
+
+      <ion-item >
+          <ion-label floating>Número:</ion-label>
+          <ion-input type="number"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>Horário de atendimento:</ion-label>
+          <ion-input type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>Descreva sobre seu estabelecimento:</ion-label>
+          <ion-textarea type="text"></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>Url Facebook:</ion-label>
+          <ion-input type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>Url Site:</ion-label>
+          <ion-input type="text"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label floating>Email:</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>Senha:</ion-label>
+          <ion-input type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>Confirme sua senha:</ion-label>
+          <ion-input type="text"></ion-input>
+      </ion-item>
+
+      <!-- <ion-item> -->
+          <button ion-button  color="primary" style="margin-top: 15px; left: 15px;" icon-left>
+              <ion-icon name="ios-cloud-upload-outline"></ion-icon>
+
+              Inserir foto
+            </button>
+      <!-- </ion-item> -->
+
   
   </ion-list>
 
-  <p>
-    ...
-  </p>
+
   <button ion-button round color="light" (click)="cadastrar()"  style="left: 90px;">
     Cadastrar
   </button>

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { CadastroPage } from '../cadastro/cadastro';
-import { EstabCadastradoPage } from '../estab-cadastrado/estab-cadastrado';
+// import { EstabCadastradoPage } from '../estab-cadastrado/estab-cadastrado';
+import { LoginPage } from '../login/login';
 
 @Component({
   selector: 'page-instrucao-cadastro',
@@ -17,6 +18,6 @@ export class InstrucaoCadastroPage {
   }
 
   jaCadastrado() {
-    this.navCtrl.push(EstabCadastradoPage);
+    this.navCtrl.push(LoginPage);
   }
 }

@@ -14,7 +14,7 @@ import { InstrucaoCadastroPage } from '../pages/instrucao-cadastro/instrucao-cad
 import { FiltroPage } from '../pages/filtro/filtro';
 import { EstabCadastradoPage } from '../pages/estab-cadastrado/estab-cadastrado';
 import { DetalheEstabCadastradoPage } from '../pages/detalhe-estab-cadastrado/detalhe-estab-cadastrado';
-
+import { LoginPage } from '../pages/login/login';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -32,7 +32,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     InstrucaoCadastroPage,
     FiltroPage,
     EstabCadastradoPage,
-    DetalheEstabCadastradoPage
+    DetalheEstabCadastradoPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -51,7 +52,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     InstrucaoCadastroPage,
     FiltroPage,
     EstabCadastradoPage,
-    DetalheEstabCadastradoPage
+    DetalheEstabCadastradoPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
