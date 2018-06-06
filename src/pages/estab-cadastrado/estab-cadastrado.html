@@ -7,13 +7,33 @@
 <ion-header>
 
   <ion-navbar>
-    <!-- <ion-title>estab-cadastrado</ion-title> -->
+    <ion-title>Bem-vindo!</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-<ion-content padding>
-  <ion-list  (click)="detalhe()">
+ <ion-content padding> 
+   <ion-list > <!--(click)="showDetalhe()" -->
+     <ion-item-sliding *ngFor="let estabelecimento of estabelecimentos | async">
+       <ion-item>
+          <h1>{{estabelecimento.nome}}</h1>
+          <p>{{estabelecimento.telefone}}</p>
+          <p>{{estabelecimento.endereco}}</p>
+       </ion-item>
+     
+
+       <ion-item-options side="left">
+          <button ion-button color="secondary" (click)="editEstabelecimento(estabelecimento)">
+            <ion-icon name="create"></ion-icon>
+          </button>
+          <button ion-button color="danger" (click)="removeEstabelecimento(estabelecimento.key)">
+            <ion-icon name="trash"></ion-icon>
+          </button>
+        </ion-item-options>
+
+     </ion-item-sliding>
+   </ion-list>
+  <!-- <ion-list  (click)="detalhe()">
     <ion-item>
       <ion-thumbnail item-start>
         <img src="assets/img/vegango.png">
@@ -21,18 +41,11 @@
       <h2>GO VEGAN!</h2>
       <p>Vegano, Restaurante</p>
       <ion-icon name="ios-arrow-forward" item-end></ion-icon>
-      <!-- <ion-row>
-          <ion-col>
-            <button ion-button icon-left clear small>
-              <ion-icon name="pin"></ion-icon>
-              <div>18 min (2.6 mi)</div>
-            </button>
-          </ion-col>
-        </ion-row> -->
+
     </ion-item>
-  </ion-list>
+  </ion-list> -->
 
   <ion-fab right bottom >
-    <button ion-fab color="light" title="Cadastrar mais estabelecimentos"  (click)="cadastrarMais()" ><ion-icon name="add"></ion-icon></button>
+    <button ion-fab color="light" title="Cadastrar mais estabelecimentos"  (click)="newEstabelecimento()" ><ion-icon name="add"></ion-icon></button>
   </ion-fab>
 </ion-content>

@@ -18,6 +18,13 @@ import { LoginPage } from '../pages/login/login';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { EstabelecimentosProvider } from '../providers/estabelecimentos/estabelecimentos';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AuthProvider } from '../providers/auth/auth';
+// import firebase from 'firebase/app';
 
 @NgModule({
   declarations: [
@@ -37,7 +44,18 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyBLSz3Wk_B1N5FBCq4UH-EB5sdMNCXYpWY",
+      authDomain: "ionic-4vegan.firebaseapp.com",
+      databaseURL: "https://ionic-4vegan.firebaseio.com",
+      projectId: "ionic-4vegan",
+      storageBucket: "ionic-4vegan.appspot.com",
+      messagingSenderId: "19037299830"
+    }),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -58,7 +76,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    EstabelecimentosProvider,
+    AuthProvider
   ]
 })
 export class AppModule {}
