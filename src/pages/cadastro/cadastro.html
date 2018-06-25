@@ -68,7 +68,7 @@
 
     <ion-item>
       <ion-label floating>CEP:</ion-label>
-      <ion-input type="text" formControlName="cep"></ion-input>
+      <ion-input type="number" formControlName="cep"></ion-input>
     </ion-item>
 
     <ion-item *ngIf="!form.controls.cep.valid && (form.controls.cep.durty || form.controls.cep.touched)" color="danger">
@@ -84,17 +84,6 @@
 
     <ion-item *ngIf="!form.controls.endereco.valid && (form.controls.endereco.durty || form.controls.endereco.touched)" color="danger">
       <div [hidden]="!form.controls.endereco.errors.required">
-        O campo é obrigatório
-      </div>    
-    </ion-item>
-
-    <ion-item>
-      <ion-label floating>Numero:</ion-label>
-      <ion-input type="text" formControlName="numero"></ion-input>
-    </ion-item>
-
-    <ion-item *ngIf="!form.controls.numero.valid && (form.controls.numero.durty || form.controls.numero.touched)" color="danger">
-      <div [hidden]="!form.controls.numero.errors.required">
         O campo é obrigatório
       </div>    
     </ion-item>
@@ -125,25 +114,15 @@
       <ion-label floating>Url Facebook:</ion-label>
       <ion-input type="text" formControlName="facebook"></ion-input>
     </ion-item>
-    <ion-item *ngIf="!form.controls.facebook.valid && (form.controls.facebook.durty || form.controls.facebook.touched)" color="danger">
-      <div [hidden]="!form.controls.facebook.errors.required">
-        O campo é obrigatório
-      </div>    
-    </ion-item>
 
     <ion-item>
         <ion-label floating>Url Site:</ion-label>
         <ion-input type="text" formControlName="site"></ion-input>
     </ion-item>
-    <ion-item *ngIf="!form.controls.site.valid && (form.controls.site.durty || form.controls.site.touched)" color="danger">
-      <div [hidden]="!form.controls.site.errors.required">
-        O campo é obrigatório
-      </div>    
-    </ion-item>
 
     <ion-item>
       <ion-label floating>Email:</ion-label>
-      <ion-input type="text" formControlName="email"></ion-input>
+      <ion-input type="email" formControlName="email"></ion-input>
     </ion-item>
 
     <ion-item *ngIf="!form.controls.email.valid && (form.controls.email.durty || form.controls.email.touched)" color="danger">
@@ -154,7 +133,7 @@
 
     <ion-item>
         <ion-label floating>Senha:</ion-label>
-        <ion-input type="text" formControlName="senha"></ion-input>
+        <ion-input type="password" formControlName="senha"></ion-input>
     </ion-item>
 
     <ion-item *ngIf="!form.controls.senha.valid && (form.controls.senha.durty || form.controls.senha.touched)" color="danger">
@@ -164,15 +143,15 @@
     </ion-item>
 
     <ion-item>
-      <button ion-button  color="primary" style="margin-top: 15px; left: 15px;" icon-left>
+      <button ion-button  color="primary" style="margin-top: 15px;" icon-left>
         <ion-icon name="ios-cloud-upload-outline"></ion-icon>
-
+        <input type="file" >
         Inserir foto
       </button>
     </ion-item>
 
     <div padding>
-      <button ion-button round color="light" type="submit" [disabled]="!form.valid" (click)="onSubmit()"  style="left: 90px;">
+      <button ion-button round color="light" type="submit" [disabled]="!form.valid" (click)="onSubmit()" >
           Cadastrar
       </button>
     </div>

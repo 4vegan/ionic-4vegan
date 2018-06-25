@@ -3,7 +3,8 @@ import { NavController, NavParams } from 'ionic-angular';
 // import { ListaPage } from '../lista/lista';
 import { TabsPage } from '../tabs/tabs';
 // import { CadastroPage } from '../cadastro/cadastro';
-import { InstrucaoCadastroPage } from '../instrucao-cadastro/instrucao-cadastro';
+// import { InstrucaoCadastroPage } from '../instrucao-cadastro/instrucao-cadastro';
+import { LoginPage } from '../login/login';
 
 @Component({
   selector: 'page-inicio',
@@ -20,7 +21,7 @@ export class InicioPage {
   }
 
   cadastrar(){
-    this.navCtrl.push(InstrucaoCadastroPage);
+    this.navCtrl.push(LoginPage);
 
   }
 

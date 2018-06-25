@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { DetalheEstabCadastradoPage } from '../detalhe-estab-cadastrado/detalhe-estab-cadastrado';
 import { CadastroPage } from '../cadastro/cadastro';
-import { EstabelecimentosProvider } from '../../providers/estabelecimentos/estabelecimentos';
 import { Observable} from 'rxjs/Observable';
-import { ToastController } from 'ionic-angular/components/toast/toast-controller';
+import { EstabelecimentosProvider } from '../../providers/estabelecimentos/estabelecimentos';
+import { LoginPage } from '../login/login';
 
 @Component({
   selector: 'page-estab-cadastrado',
@@ -16,10 +16,19 @@ export class EstabCadastradoPage {
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
-    private provider: EstabelecimentosProvider,
-    private toast: ToastController) {
+    private auth: EstabelecimentosProvider
+  ) {
 
-      this.estabelecimentos = this.provider.getAll();
+  }
+
+  signOut() {
+    this.auth.signOut()
+      .then(() => {
+        this.navCtrl.setRoot(LoginPage);
+      })
+      .catch((erro) => {
+        console.error(erro);
+      });
   }
 
   newEstabelecimento(){
@@ -31,16 +40,16 @@ export class EstabCadastradoPage {
 
   }
 
-  removeEstabelecimento(key: string){
-    this.provider.remove(key)
-      .then(() => {
-        this.toast.create({message: 'Estabelecimento removido com sucesso.', duration: 3000}).present();
-      })
-      .catch(() => {
-        this.toast.create({message: 'Erro ao remover o estabelecimento.', duration: 3000}).present();
-      })
+  // removeEstabelecimento(key: string){
+  //   this.provider.remove(key)
+  //     .then(() => {
+  //       this.toast.create({message: 'Estabelecimento removido com sucesso.', duration: 3000}).present();
+  //     })
+  //     .catch(() => {
+  //       this.toast.create({message: 'Erro ao remover o estabelecimento.', duration: 3000}).present();
+  //     })
 
-  }
+  // }
 
   showDetalhe(){
     this.navCtrl.push(DetalheEstabCadastradoPage);

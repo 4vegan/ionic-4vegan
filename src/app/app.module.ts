@@ -10,22 +10,24 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { DetalhesPage } from '../pages/detalhes/detalhes';
 import { InicioPage } from '../pages/inicio/inicio';
 import { CadastroPage } from '../pages/cadastro/cadastro';
-import { InstrucaoCadastroPage } from '../pages/instrucao-cadastro/instrucao-cadastro';
 import { FiltroPage } from '../pages/filtro/filtro';
 import { EstabCadastradoPage } from '../pages/estab-cadastrado/estab-cadastrado';
 import { DetalheEstabCadastradoPage } from '../pages/detalhe-estab-cadastrado/detalhe-estab-cadastrado';
 import { LoginPage } from '../pages/login/login';
+import { SignupPage } from '../pages/signup/signup';
+import { ResetPasswordPage } from '../pages/reset-password/reset-password';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
 import { EstabelecimentosProvider } from '../providers/estabelecimentos/estabelecimentos';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { AuthProvider } from '../providers/auth/auth';
-// import firebase from 'firebase/app';
 
+import { ImagePicker} from '@ionic-native/image-picker';
+ 
 @NgModule({
   declarations: [
     MyApp,
@@ -36,11 +38,12 @@ import { AuthProvider } from '../providers/auth/auth';
     DetalhesPage,
     InicioPage,
     CadastroPage,
-    InstrucaoCadastroPage,
     FiltroPage,
     EstabCadastradoPage,
     DetalheEstabCadastradoPage,
-    LoginPage
+    LoginPage,
+    SignupPage,
+    ResetPasswordPage
   ],
   imports: [
     BrowserModule,
@@ -67,18 +70,19 @@ import { AuthProvider } from '../providers/auth/auth';
     DetalhesPage,
     InicioPage,
     CadastroPage,
-    InstrucaoCadastroPage,
     FiltroPage,
     EstabCadastradoPage,
     DetalheEstabCadastradoPage,
-    LoginPage
+    LoginPage,
+    SignupPage,
+    ResetPasswordPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     EstabelecimentosProvider,
-    AuthProvider
+    ImagePicker
   ]
 })
 export class AppModule {}

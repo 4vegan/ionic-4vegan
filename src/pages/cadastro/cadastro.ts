@@ -54,19 +54,19 @@ export class CadastroPage {
     })
   }
 
-  onSubmit(){ //aqui valida de todos os campos do form estão preenchidos, se sim efetua o cadastro e direciona para a pagina da lista de cadastro.
-    if(this.form.valid){
-      this.provider.save(this.form.value)
-        .then(() => {
-          this.toast.create({message: 'Cadastro salvo com sucesso.', duration:3000}).present();
-          this.navCtrl.push(EstabCadastradoPage);
-        })
-        .catch((error) => {
-          this.toast.create({message: 'Erro ao salvar o cadastro', duration: 3000}).present();
-          console.error(error);
-        });
-    }
-  }
+  // onSubmit(){ //aqui valida de todos os campos do form estão preenchidos, se sim efetua o cadastro e direciona para a pagina da lista de cadastro.
+  //   if(this.form.valid){
+  //     this.provider.save(this.form.value)
+  //       .then(() => {
+  //         this.toast.create({message: 'Cadastro salvo com sucesso.', duration:3000}).present();
+  //         this.navCtrl.push(EstabCadastradoPage);
+  //       })
+  //       .catch((error) => {
+  //         this.toast.create({message: 'Erro ao salvar o cadastro', duration: 3000}).present();
+  //         console.error(error);
+  //       });
+  //   }
+  // }
 
   //fazer metodo para upload de foto
 
